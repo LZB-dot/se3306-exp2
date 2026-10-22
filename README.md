@@ -8,6 +8,7 @@
 | 仓库 | <https://github.com/LZB-dot/se3306-exp2> |
 | 部署 | <https://lzb-dot.github.io/se3306-exp2/>（已上线；入口页可跳转 `tic/` 与 `blog/`，每次 push 由 GitHub Actions 自动重建） |
 | AI 使用声明 | [`ai-reviews.md`](./ai-reviews.md)（含 AI 使用声明 + 五检查点审查记录） |
+| 分步详解 | [`docs/操作分步详解.md`](./docs/操作分步详解.md)（每一步「做了什么 / 为什么 / 怎么验证」） |
 
 ---
 
