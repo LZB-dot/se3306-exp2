@@ -1,0 +1,73 @@
+name: Deploy lab2-tic & lab2-blog to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: 构建两个 React 项目
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 构建任务1 井字棋
+        working-directory: lab2-tic
+        run: |
+          pnpm install --no-frozen-lockfile
+          GH_PAGES_BASE=/se3306-exp2/tic/ pnpm run build
+
+      - name: 构建任务4/5 博客
+        working-directory: lab2-blog
+        run: |
+          pnpm install --no-frozen-lockfile
+          GH_PAGES_BASE=/se3306-exp2/blog/ pnpm run build
+
+      - name: 组装发布目录
+        run: |
+          mkdir -p site/tic site/blog
+          cp -r lab2-tic/dist/. site/tic/
+          cp -r lab2-blog/dist/. site/blog/
+          cp pages/index.html site/index.html
+          touch site/.nojekyll
+          find site -maxdepth 2 -type f | sort
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    name: 部署到 GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

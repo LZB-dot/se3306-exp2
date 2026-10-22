@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "我的第一篇博客",
+      "category": "技术",
+      "summary": "Query 三态",
+      "content": "从 create-vite 到第一个组件，一步一步来。useQuery 的 pending / error / success 三态让加载过程可见。",
+      "publishedAt": "2026-09-01"
+    },
+    {
+      "id": "2",
+      "title": "乐观更新初体验",
+      "category": "随笔",
+      "summary": "先秒出、失败回滚",
+      "content": "点发布的瞬间界面就出现了新文章，这就是乐观更新；请求失败再回滚，靠 onError 把快照放回去。",
+      "publishedAt": "2026-09-03"
+    },
+    {
+      "id": "3",
+      "title": "状态管理小抄",
+      "category": "技术",
+      "summary": "useState 到 Zustand",
+      "content": "组件内 useState，跨组件状态提升，全局 Zustand。三者不是替代关系，而是按共享范围选择。",
+      "publishedAt": "2026-09-05"
+    },
+    {
+      "id": "4",
+      "title": "部署上线记",
+      "category": "生活",
+      "summary": "静态托管 5 分钟上线",
+      "content": "pnpm build 之后把 dist 传上去就行，静态产物不需要 Node 服务常驻。",
+      "publishedAt": "2026-09-07"
+    },
+    {
+      "title": "乐观更新测试文章",
+      "category": "随笔",
+      "summary": "乐观更新插入",
+      "content": "……",
+      "publishedAt": "2026-10-22",
+      "id": "I3xjPVV"
+    }
+  ]
+}

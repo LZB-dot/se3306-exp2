@@ -1,0 +1,171 @@
+:root {
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --text: #1f2328;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --brand: #2563eb;
+  --danger: #dc2626;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 48px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+}
+
+.app { max-width: 760px; margin: 0 auto; }
+
+/* 顶部页签 */
+.tabs, .subtabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.tab {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--text);
+}
+.tab-active { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+/* 头部 */
+.header { margin-bottom: 18px; }
+.blog-title { font-size: 26px; margin: 0 0 2px; }
+.blog-meta { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* 表单 */
+.form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+.input {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font-family: inherit;
+}
+.form-actions { display: flex; gap: 10px; margin-top: 4px; }
+.inline-form { display: flex; gap: 8px; margin: 12px 0; }
+.inline-form .input { flex: 1; }
+
+.btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text);
+}
+.btn-primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn-danger { background: #fff; border-color: var(--danger); color: var(--danger); }
+.btn-back { margin-bottom: 12px; }
+.btnbtn { margin-left: 8px; padding: 2px 8px; font-size: 12px; cursor: pointer; }
+
+/* 分类过滤 */
+.filter { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.chip {
+  padding: 5px 13px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.chip-active { background: #eef4ff; border-color: var(--brand); color: var(--brand); }
+
+/* 列表与卡片 */
+.list { display: flex; flex-direction: column; gap: 12px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+.card:hover { border-color: var(--brand); }
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.card-title { font-size: 17px; margin: 0; }
+.card-summary { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+.card-date { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+
+.badge {
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #eef2f7;
+  color: var(--muted);
+}
+.badge-技术 { background: #e8f1ff; color: #1d4ed8; }
+.badge-随笔 { background: #f3e8ff; color: #7e22ce; }
+.badge-生活 { background: #dcfce7; color: #15803d; }
+
+/* 详情 */
+.detail { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+.detail-title { font-size: 21px; margin: 0 0 8px; }
+.detail-meta { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
+.detail-date { color: var(--muted); font-size: 13px; }
+.detail-content { white-space: pre-wrap; margin-bottom: 16px; }
+
+/* 空态与提示 */
+.empty {
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  color: var(--muted);
+}
+.error { color: var(--danger); }
+.tip { font-size: 13px; color: var(--muted); }
+.hint { font-size: 13px; color: var(--muted); }
+.note {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #fff8c5;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.goal { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+
+/* 训练区 */
+.ex { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+.block { border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px; }
+.block h3 { font-size: 15px; margin: 0 0 8px; }
+.value { font-size: 14px; margin-left: 10px; }
+.switch-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.switch { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; }
+.fetching { font-size: 12px; color: var(--muted); }
+.post-list { padding-left: 20px; }
+.post-list li { margin-bottom: 6px; }
+.code {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+.log { background: #0d1117; color: #c9d1d9; border-radius: 8px; padding: 10px 24px; font-size: 13px; }
+.keytag { margin-left: 8px; font-size: 12px; color: var(--muted); }
+
+/* Thinking in React 表格 */
+.ptable { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+.ptable th, .ptable td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; }
+.ptable thead th { background: #f6f8fa; }
+.out { color: var(--danger); }
+.ptable-form { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+
+/* 远程文章 */
+.remote { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+.remote-list { padding-left: 20px; }
+.remote-list li { margin-bottom: 8px; }
+.remote-list strong { margin-right: 8px; }
+.remote-list .card-date { margin-left: 8px; }
